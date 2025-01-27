@@ -1,7 +1,8 @@
 :root {
     --primary-color: #1E1332;
+    --title-color: #392B54; /* New softer violet for titles */
     --secondary-color: #052D7C; /* McKinsey-style blue */
-    --accent-color: #E74C3C;
+    --accent-color: #1E1332;
     --text-color: #2B2B2B;
     --background-color: #F5F6FA;
     --light-gray: #F5F5F5;
@@ -102,7 +103,7 @@ section {
     line-height: 1.2;
     font-weight: 500;
     margin-bottom: 1.5rem;
-    color: var(--primary-color);
+    color: var(--title-color);
 }
 
 .highlight {
@@ -154,6 +155,8 @@ section {
 }
 
 .problem-card:hover {
+    background: rgba(57, 43, 84, 0.03);
+    border-color: var(--title-color);
     transform: translateY(-4px);
 }
 
@@ -177,6 +180,8 @@ section {
 }
 
 .team-member:hover {
+    background: rgba(57, 43, 84, 0.03);
+    border-color: var(--title-color);
     transform: translateY(-4px);
 }
 
@@ -215,11 +220,14 @@ section {
 }
 
 .timeline-phase:hover {
+    background: rgba(57, 43, 84, 0.02);
+    border-top: 1px solid rgba(57, 43, 84, 0.1);
+    border-bottom: 1px solid rgba(57, 43, 84, 0.1);
     transform: translateY(-4px);
 }
 
 .timeline-phase h3 {
-    color: var(--secondary-color);
+    color: var(--title-color);
     font-size: 1.5rem;
     font-weight: 300;
     margin-bottom: 1rem;
@@ -237,13 +245,13 @@ section {
 
 .timeline-phase li::before {
     content: "•";
-    color: var(--accent-color);
+    color: var(--primary-color);
     position: absolute;
     left: 0;
 }
 
 .practical-details {
-    background: var(--secondary-color);
+    background: var(--primary-color);
     color: white;
     padding: 2.5rem;
     border-radius: 8px;
@@ -293,16 +301,19 @@ section {
 }
 
 .target-item:hover {
+    background: rgba(57, 43, 84, 0.03);
+    border-color: var(--title-color);
     transform: translateY(-4px);
 }
 
 .target-number {
     font-size: 1.25rem;
     font-weight: 600;
-    color: var(--secondary-color);
+    color: var(--primary-color);
     padding: 0.5rem 1rem;
-    background: rgba(5, 45, 124, 0.1);
+    background: rgba(57, 43, 84, 0.1);
     border-radius: 4px;
+    border: 1px solid rgba(57, 43, 84, 0.2);
     min-width: 48px;
     text-align: center;
 }
@@ -331,11 +342,13 @@ section {
 }
 
 .checklist-item:hover {
+    background: rgba(57, 43, 84, 0.03);
+    border-color: var(--title-color);
     transform: translateY(-4px);
 }
 
 .checklist-item h3 {
-    color: var(--accent-color);
+    color: var(--title-color);
     margin-bottom: 1rem;
 }
 
@@ -352,7 +365,7 @@ section {
 
 .cta-button {
     display: inline-block;
-    background: var(--secondary-color);
+    background: var(--primary-color);
     color: white;
     font-size: 0.9375rem;
     text-transform: uppercase;
@@ -365,7 +378,7 @@ section {
 }
 
 .cta-button:hover {
-    background: #031D52;
+    background: #130c22;
 }
 
 @media (max-width: 768px) {
@@ -562,7 +575,7 @@ h3 {
     content: "→";
     position: absolute;
     left: 0;
-    color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 @media (max-width: 1024px) {
@@ -617,7 +630,7 @@ h3 {
 }
 
 .solution-box {
-    background: var(--secondary-color);
+    background: var(--primary-color);
     color: white;
     padding: 2.5rem;
     border-radius: 8px;
@@ -764,12 +777,12 @@ h3 {
 .profile-title h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
-    color: var(--primary-color);
+    color: var(--title-color);
 }
 
 .role {
     font-size: 1.5rem;
-    color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 .profile-content {
@@ -788,7 +801,7 @@ h3 {
 .profile-section h2 {
     font-size: 1.75rem;
     margin-bottom: 1.5rem;
-    color: var(--secondary-color);
+    color: var(--title-color);
 }
 
 .profile-section ul {
@@ -873,4 +886,50 @@ h3 {
         padding: 0.5rem 0;
         text-align: center;
     }
+}
+
+/* Update all titles to use the new color */
+h1, h2, h3 {
+    color: var(--title-color);
+}
+
+/* Keep white text for elements with dark backgrounds */
+.practical-details h3,
+.solution-box h3 {
+    color: white;
+}
+
+/* Add violet links */
+.nav-links a:hover {
+    color: var(--title-color);
+}
+
+/* Add violet selection color */
+::selection {
+    background: rgba(57, 43, 84, 0.2);
+    color: var(--title-color);
+}
+
+/* Add violet focus outlines */
+a:focus, button:focus {
+    outline: 2px solid rgba(57, 43, 84, 0.5);
+    outline-offset: 2px;
+}
+
+/* Add violet scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(57, 43, 84, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(57, 43, 84, 0.3);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(57, 43, 84, 0.5);
 } 
