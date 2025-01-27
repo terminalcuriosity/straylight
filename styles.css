@@ -396,11 +396,25 @@ section {
     }
     
     .nav-links {
-        display: none;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 1rem;
+        border-bottom: 1px solid var(--border-color);
+        display: none; /* We'll need JavaScript to toggle this */
+    }
+
+    .nav-links a {
+        display: block;
+        margin: 1rem 0;
+        padding: 0.5rem 0;
+        text-align: center;
     }
 
     section {
-        padding: 2rem 1.5rem;
+        padding: 1.5rem 1rem;
     }
 
     .target-item {
@@ -409,6 +423,86 @@ section {
     
     .target-item p {
         font-size: 1.1rem;
+    }
+
+    /* Team cards adjustments */
+    .team-member {
+        padding: 1rem;
+    }
+
+    .team-member img {
+        width: 150px;
+        height: 150px;
+    }
+
+    /* Profile page adjustments */
+    .team-profile {
+        padding-top: 80px;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .profile-header {
+        padding: 1.5rem;
+    }
+
+    .profile-intro img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .profile-section {
+        padding: 1.5rem;
+    }
+
+    /* Solution box adjustments */
+    .solution-box {
+        padding: 1.5rem;
+    }
+
+    /* Timeline adjustments */
+    .timeline-container {
+        gap: 1rem;
+    }
+
+    .practical-details {
+        padding: 1.5rem;
+    }
+
+    /* Target items adjustments */
+    .target-item {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1.5rem;
+    }
+
+    .target-number {
+        align-self: flex-start;
+    }
+}
+
+/* Add styles for smaller phones */
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .profile-intro img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .profile-title h1 {
+        font-size: 2rem;
+    }
+
+    .solution-main {
+        font-size: 1.5rem;
+    }
+
+    .problem-card,
+    .checklist-item {
+        padding: 1rem;
     }
 }
 
@@ -719,5 +813,64 @@ h3 {
 
     .profile-title h1 {
         font-size: 2.5rem;
+    }
+}
+
+.mobile-menu-button {
+    display: none;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.mobile-menu-button span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--primary-color);
+    margin: 5px 0;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.mobile-menu-button.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.mobile-menu-button.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-button.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-button {
+        display: block;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 1rem;
+        border-bottom: 1px solid var(--border-color);
+        display: none;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .nav-links.active {
+        display: block;
+    }
+
+    .nav-links a {
+        display: block;
+        margin: 1rem 0;
+        padding: 0.5rem 0;
+        text-align: center;
     }
 } 
