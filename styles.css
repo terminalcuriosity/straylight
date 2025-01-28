@@ -28,18 +28,16 @@ header {
     width: 100%;
     background: white;
     border-bottom: 1px solid var(--border-color);
-    box-shadow: none; /* McKinsey uses subtle borders instead of shadows */
     z-index: 1000;
 }
 
 nav {
-    max-width: 1440px; /* McKinsey uses wider content area */
+    max-width: 1440px;
     margin: 0 auto;
     padding: 1.25rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: white;
 }
 
 .logo {
@@ -772,6 +770,7 @@ h3 {
     height: 250px;
     border-radius: 50%;
     object-fit: cover;
+    flex-shrink: 0;  /* Prevent image from shrinking */
 }
 
 .profile-title h1 {
@@ -982,15 +981,22 @@ a:focus, button:focus {
     margin-bottom: 0;
 }
 
-/* Philosophy quotes styling */
-.philosophy-quotes {
-    position: relative;
-    padding: 2rem 0;
+/* Philosophy quotes styling for Ilya's page */
+.philosophy-quotes h3 {
+    color: var(--title-color);
+    font-size: 1.4rem;
+    margin: 2.5rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(57, 43, 84, 0.1);
+}
+
+.philosophy-quotes h3:first-child {
+    margin-top: 0;
 }
 
 .philosophy-quotes blockquote {
     width: 100%;
-    padding: 2rem;
+    padding: 1.5rem;
     margin: 1rem 0;
     background: rgba(57, 43, 84, 0.02);
     border-radius: 8px;
@@ -998,32 +1004,64 @@ a:focus, button:focus {
     border-left: 4px solid var(--title-color);
 }
 
+/* Standardize all text in philosophy section */
+.philosophy-quotes p,
+.philosophy-quotes li,
+.philosophy-quotes ul,
+.philosophy-quotes ol {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.philosophy-quotes ul,
+.philosophy-quotes ol {
+    margin: 1rem 0;
+    padding-left: 2rem;
+}
+
+.philosophy-quotes li {
+    margin: 0.5rem 0;
+    border: none;
+    padding: 0;
+}
+
+.philosophy-quotes strong {
+    color: var(--title-color);
+    font-weight: 500;
+}
+
+/* Remove quote marks */
 .philosophy-quotes blockquote::before,
 .philosophy-quotes blockquote::after {
-    content: '"';
-    font-size: 2.5rem;
-    color: var(--title-color);
-    font-family: Georgia, serif;
-    line-height: 1;
-    position: absolute;
+    display: none;
 }
 
-.philosophy-quotes blockquote::before {
-    left: 1rem;
-    top: 1rem;
-}
-
-.philosophy-quotes blockquote::after {
-    right: 1rem;
-    bottom: 0.5rem;
-}
-
+/* Adjust text padding since we removed quotes */
 .philosophy-quotes blockquote p {
-    padding: 0 2rem;
+    padding: 0;
     font-size: 1.2rem;
     line-height: 1.6;
     margin: 0;
     color: var(--text-color);
+}
+
+/* Remove divider lines */
+.quote-divider {
+    display: none;
+}
+
+/* Enhance section headers to serve as separators */
+.philosophy-quotes h3 {
+    color: var(--title-color);
+    font-size: 1.4rem;
+    margin: 2.5rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(57, 43, 84, 0.1);
+}
+
+.philosophy-quotes h3:first-child {
+    margin-top: 0;
 }
 
 /* First two sections in a grid */
@@ -1088,14 +1126,6 @@ a:focus, button:focus {
 }
 
 /* Add styles for quote divider */
-.quote-divider {
-    height: 1px;
-    background: rgba(57, 43, 84, 0.1);
-    margin: 1rem 0;
-    width: 100%;
-}
-
-/* Add spacing between sections */
 .mt-4 {
     margin-top: 2.5rem;
 }
@@ -1137,17 +1167,36 @@ a:focus, button:focus {
     color: var(--title-color);
 }
 
-/* Update layout styles */
+/* Left column sections styling */
 .profile-left-column {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 2rem; /* Same gap as between other sections */
+    gap: 2rem;
 }
 
 .profile-left-column .profile-section {
-    width: 100%;
-    margin: 0;
+    flex: 0 0 auto;
+    width: 100%; /* Make both sections full width */
+}
+
+.profile-left-column .profile-section h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    color: var(--title-color);
+}
+
+.profile-left-column .profile-section ul {
+    list-style: none;
+}
+
+.profile-left-column .profile-section li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.profile-left-column .profile-section li:last-child {
+    border-bottom: none;
 }
 
 /* Update media query */
@@ -1155,4 +1204,144 @@ a:focus, button:focus {
     .profile-left-column {
         width: 100%;
     }
+}
+
+/* Philosophy section headers */
+.philosophy-quotes h3 {
+    color: var(--title-color);
+    font-size: 1.4rem;
+    margin: 2rem 0 1rem;
+}
+
+.philosophy-quotes h3:first-child {
+    margin-top: 0;
+}
+
+/* Philosophy lists */
+.philosophy-quotes ul,
+.philosophy-quotes ol {
+    margin: 1rem 0;
+    padding-left: 2rem;
+}
+
+.philosophy-quotes li {
+    margin: 0.5rem 0;
+    border: none;
+    padding: 0;
+}
+
+.philosophy-quotes strong {
+    color: var(--title-color);
+}
+
+/* Philosophy section styling - standardized text sizes */
+.philosophy-quotes {
+    padding: 2rem 0;
+}
+
+.philosophy-quotes h3 {
+    color: var(--title-color);
+    font-size: 1.4rem;
+    margin: 2.5rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(57, 43, 84, 0.1);
+}
+
+/* Make ALL text elements in philosophy section consistent */
+.philosophy-quotes blockquote,
+.philosophy-quotes p,
+.philosophy-quotes ul,
+.philosophy-quotes ol,
+.philosophy-quotes li,
+.philosophy-quotes strong {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.philosophy-quotes blockquote {
+    padding: 1.5rem;
+    margin: 1rem 0;
+    background: rgba(57, 43, 84, 0.02);
+    border-radius: 8px;
+    border-left: 4px solid var(--title-color);
+}
+
+/* Consistent list styling */
+.philosophy-quotes ul,
+.philosophy-quotes ol {
+    margin: 0.75rem 0;
+    padding-left: 2rem;
+}
+
+.philosophy-quotes li {
+    margin: 0.5rem 0;
+    padding: 0;
+    border: none;
+}
+
+/* Remove any nested size overrides */
+.philosophy-quotes blockquote * {
+    font-size: inherit;
+    line-height: inherit;
+}
+
+/* Background section styling */
+.background-section {
+    margin-bottom: 2rem;
+}
+
+.background-section:last-child {
+    margin-bottom: 0;
+}
+
+.background-section h3 {
+    color: var(--title-color);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(57, 43, 84, 0.1);
+}
+
+.background-section ul {
+    margin-left: 0;
+}
+
+.background-section li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.background-section li:last-child {
+    border-bottom: none;
+}
+
+/* Cases section styling */
+.profile-section.cases a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.profile-section.cases a:hover {
+    color: var(--title-color);
+}
+
+.profile-section.cases li {
+    display: flex;
+    align-items: center;
+}
+
+.profile-section.cases li::after {
+    content: "→";
+    margin-left: auto;
+    color: var(--title-color);
+    opacity: 0;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    transform: translateX(-10px);
+}
+
+.profile-section.cases li:hover::after {
+    opacity: 1;
+    transform: translateX(0);
 } 
