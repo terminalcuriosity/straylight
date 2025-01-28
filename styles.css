@@ -1046,22 +1046,13 @@ a:focus, button:focus {
     color: var(--text-color);
 }
 
-/* Remove divider lines */
+/* Show quote dividers */
 .quote-divider {
-    display: none;
-}
-
-/* Enhance section headers to serve as separators */
-.philosophy-quotes h3 {
-    color: var(--title-color);
-    font-size: 1.4rem;
-    margin: 2.5rem 0 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid rgba(57, 43, 84, 0.1);
-}
-
-.philosophy-quotes h3:first-child {
-    margin-top: 0;
+    display: block;
+    height: 1px;
+    background: rgba(57, 43, 84, 0.1);
+    margin: 1rem auto;  /* Reduced from 2rem to 1rem */
+    width: 50%;
 }
 
 /* First two sections in a grid */
