@@ -956,14 +956,44 @@ a:focus, button:focus {
     transform: scaleX(-1);
 }
 
-/* Profile quote styling */
-.profile-quote {
-    font-size: 1.4rem;
-    font-style: italic;
-    color: var(--title-color);
-    margin-top: 1.5rem;
-    padding-left: 1rem;
-    border-left: 3px solid var(--title-color);
+/* Clean slate - remove all quote styles first */
+blockquote::before,
+blockquote::after {
+    display: none;
+}
+
+/* Remove all other quote-related styles and keep only this */
+.quote {
+    position: relative;
+    padding: 1.5rem 3rem;
+    margin: 1rem 0;
+    background: rgba(57, 43, 84, 0.02);
+    border-radius: 8px;
+    border-left: 4px solid var(--title-color);
+}
+
+.quote::before {
+    content: ''';  /* Changed to single quote */
+    position: absolute;
+    left: -4px;    /* Aligned with the left border */
+    top: -5px;
+    font-size: 2rem;  /* Much smaller size */
+    color: #663399;
+    font-family: Georgia, serif;
+}
+
+.quote::after {
+    content: ''';  /* Changed to single quote */
+    position: absolute;
+    left: -4px;    /* Aligned with the left border */
+    bottom: -15px;
+    font-size: 2rem;  /* Much smaller size */
+    color: #663399;
+    font-family: Georgia, serif;
+}
+
+.quote-divider {
+    margin: 0.5rem auto;  /* Reduced margin */
 }
 
 /* Process steps styling */
@@ -995,64 +1025,16 @@ a:focus, button:focus {
 }
 
 .philosophy-quotes blockquote {
-    width: 100%;
-    padding: 1.5rem;
+    position: relative;
+    padding: 1.5rem 3rem;  /* Added padding for quote marks */
     margin: 1rem 0;
     background: rgba(57, 43, 84, 0.02);
     border-radius: 8px;
-    position: relative;
-    border-left: 4px solid var(--title-color);
 }
 
-/* Standardize all text in philosophy section */
-.philosophy-quotes p,
-.philosophy-quotes li,
-.philosophy-quotes ul,
-.philosophy-quotes ol {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    color: var(--text-color);
-}
-
-.philosophy-quotes ul,
-.philosophy-quotes ol {
-    margin: 1rem 0;
-    padding-left: 2rem;
-}
-
-.philosophy-quotes li {
-    margin: 0.5rem 0;
-    border: none;
-    padding: 0;
-}
-
-.philosophy-quotes strong {
-    color: var(--title-color);
-    font-weight: 500;
-}
-
-/* Remove quote marks */
 .philosophy-quotes blockquote::before,
 .philosophy-quotes blockquote::after {
-    display: none;
-}
-
-/* Adjust text padding since we removed quotes */
-.philosophy-quotes blockquote p {
-    padding: 0;
-    font-size: 1.2rem;
-    line-height: 1.6;
-    margin: 0;
-    color: var(--text-color);
-}
-
-/* Show quote dividers */
-.quote-divider {
-    display: block;
-    height: 1px;
-    background: rgba(57, 43, 84, 0.1);
-    margin: 1rem auto;  /* Reduced from 2rem to 1rem */
-    width: 50%;
+    display: none;  /* This hides Ilya's quote marks */
 }
 
 /* First two sections in a grid */
@@ -1341,4 +1323,71 @@ a:focus, button:focus {
 .profile-section.process {
     flex: 1;
     height: fit-content; /* This ensures it only takes the space it needs */
-} 
+}
+
+/* Tatiana's quotes styling */
+.quote-left,
+.quote-right {
+    position: relative;
+    padding: 2rem 4rem;
+    margin: 1rem 0;
+    background: rgba(57, 43, 84, 0.02);
+    border-radius: 8px;
+    border-left: 4px solid var(--title-color);
+}
+
+.quote-left::before,
+.quote-right::before {
+    content: '"';
+    font-size: 3rem;
+    color: var(--title-color);
+    position: absolute;
+    left: 1rem;
+    top: 0.5rem;
+}
+
+.quote-left::after,
+.quote-right::after {
+    content: '"';
+    font-size: 3rem;
+    color: var(--title-color);
+    position: absolute;
+    right: 1rem;
+    bottom: 0;
+}
+
+/* Show quote dividers */
+.quote-divider {
+    display: block;
+    height: 1px;
+    background: rgba(57, 43, 84, 0.1);
+    margin: 1rem auto;
+    width: 50%;
+}
+
+.decorative-quote {
+    position: relative;
+    padding: 2rem 3rem;
+    margin: 2rem 0;
+}
+
+.decorative-quote::before,
+.decorative-quote::after {
+    position: absolute;
+    font-size: 6rem;
+    color: #663399; /* Dark violet color */
+    font-family: Georgia, serif;
+    line-height: 1;
+}
+
+.decorative-quote::before {
+    content: '"';
+    left: -0.5rem;
+    top: -1rem;
+}
+
+.decorative-quote::after {
+    content: '"';
+    right: -0.5rem;
+    bottom: -2rem;
+}
