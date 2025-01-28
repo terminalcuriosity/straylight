@@ -775,8 +775,12 @@ h3 {
 
 .profile-title h1 {
     font-size: 3rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     color: var(--title-color);
+}
+
+.profile-title .role {
+    margin-bottom: 0.5rem;
 }
 
 .role {
@@ -801,9 +805,9 @@ h3 {
 
 .profile-section.background,
 .profile-section.process {
-    flex: 1; /* Make both sections take equal width */
-    width: 50%;
-    margin: 0; /* Remove the margin-right */
+    width: 100%;  /* Make them full width */
+    display: block;  /* Stack them vertically */
+    margin-right: 0;
 }
 
 .profile-section h2 {
@@ -1075,8 +1079,6 @@ blockquote::after {
 .profile-top-sections {
     display: flex;
     gap: 2rem;
-    margin-bottom: 2rem;
-    align-items: flex-start; /* This ensures top alignment */
 }
 
 /* Update the width styles for background and process sections */
@@ -1390,4 +1392,46 @@ blockquote::after {
     content: '"';
     right: -0.5rem;
     bottom: -2rem;
+}
+
+.profile-quote {
+    position: relative;
+    padding-left: 1.5rem;
+    border-left: 4px solid var(--title-color);
+    margin-left: 0;  /* Remove the left margin to align with text above */
+}
+
+.profile-quote p {
+    font-style: italic;
+    font-size: 1.5rem;
+    line-height: 1.4;
+    color: var(--title-color);
+    font-weight: 400;
+    margin: 1.5rem 0;
+}
+
+/* Adjust title spacing */
+.profile-title h1 {
+    margin-bottom: 0.5rem;  /* Reduce space between name and role */
+}
+
+.profile-title .role {
+    margin-bottom: 0.5rem;  /* Reduce space between role and quote */
+}
+
+/* Update width for Natalia's page only */
+.team-profile .profile-section.process {
+    width: 100%;  /* Make process section full width */
+    margin-right: 0;
+}
+
+.team-profile .profile-section.background {
+    width: 100%;  /* Make background section full width */
+    margin-right: 0;
+}
+
+/* Keep the original profile-top-sections layout */
+.profile-top-sections {
+    display: flex;
+    gap: 2rem;
 }
