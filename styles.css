@@ -1103,6 +1103,7 @@ a:focus, button:focus {
     display: flex;
     gap: 2rem;
     margin-bottom: 2rem;
+    align-items: flex-start; /* This ensures top alignment */
 }
 
 /* Update the width styles for background and process sections */
@@ -1344,4 +1345,9 @@ a:focus, button:focus {
 .profile-section.cases li:hover::after {
     opacity: 1;
     transform: translateX(0);
+}
+
+.profile-section.process {
+    flex: 1;
+    height: fit-content; /* This ensures it only takes the space it needs */
 } 
