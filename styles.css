@@ -1341,8 +1341,7 @@ blockquote::after {
     margin-left: auto;
     color: var(--title-color);
     opacity: 1;
-    transition: opacity 0.2s ease, transform 0.2s ease;
-    transform: translateX(5px);
+    transition: transform 0.2s ease;
 }
 
 .profile-section.cases li:hover::after {
@@ -1804,4 +1803,38 @@ blockquote::after {
 
 .case-study table tr:hover {
     background: rgba(57, 43, 84, 0.02);
+}
+
+/* Main page case card styling */
+.case-link::after {
+    content: "→";
+    margin-left: 0.5rem;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+}
+
+.case-link:hover::after {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Ilya's profile case links styling */
+.profile-section.cases li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+}
+
+.profile-section.cases li::after {
+    content: "→";
+    margin-left: auto;
+    color: var(--title-color);
+    opacity: 1;
+    transition: transform 0.2s ease;
+}
+
+.profile-section.cases li:hover::after {
+    transform: translateX(5px);
 }
