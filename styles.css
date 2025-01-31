@@ -1451,19 +1451,20 @@ blockquote::after {
 }
 
 .profile-quote {
-    position: relative;
-    padding-left: 1.5rem;
-    border-left: 4px solid var(--title-color);
-    margin-left: 0;  /* Remove the left margin to align with text above */
+    margin-top: 1rem;
+    color: var(--title-color);
+    font-size: 1.2rem;
+    line-height: 1.4;
+    transition: color 0.2s ease;
+}
+
+.profile-quote a {
+    text-decoration: none;
+    color: inherit;
 }
 
 .profile-quote p {
-    font-style: italic;
-    font-size: 1.5rem;
-    line-height: 1.4;
-    color: var(--title-color);
-    font-weight: 400;
-    margin: 1.5rem 0;
+    margin: 0;
 }
 
 /* Adjust title spacing */
@@ -1894,4 +1895,10 @@ blockquote::after {
 .no-bottom-space {
     margin-bottom: 0 !important;
     padding-bottom: 0 !important;
+}
+
+/* Smooth scrolling and offset for anchor links */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px; /* This ensures the scroll stops at the title */
 }
