@@ -27,12 +27,11 @@ body {
 
 header {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+    width: 100%;
     background: white;
-    z-index: 1000;
+    padding: 1rem 2rem;
     border-bottom: 1px solid var(--border-color);
+    z-index: 100; /* Ensure header stays on top */
 }
 
 nav {
@@ -454,7 +453,7 @@ section {
 
     /* Profile page adjustments */
     .team-profile {
-        padding-top: 80px;
+        padding-top: 80px; /* Add space for fixed header */
         padding-left: 1rem;
         padding-right: 1rem;
     }
@@ -495,6 +494,16 @@ section {
 
     .target-number {
         align-self: flex-start;
+    }
+
+    .profile-top-sections {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .profile-left-column,
+    .profile-section.process {
+        width: 100%;
     }
 }
 
@@ -1170,43 +1179,22 @@ blockquote::after {
     color: var(--title-color);
 }
 
-/* Left column sections styling */
+/* Profile layout adjustments */
 .profile-left-column {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 2rem;  /* Restores spacing between sections */
 }
 
 .profile-left-column .profile-section {
     flex: 0 0 auto;
-    width: 100%; /* Make both sections full width */
+    width: 100%;  /* Make sections full width */
 }
 
-.profile-left-column .profile-section h2 {
-    font-size: 1.75rem;
-    margin-bottom: 1.5rem;
-    color: var(--title-color);
-}
-
-.profile-left-column .profile-section ul {
-    list-style: none;
-}
-
-.profile-left-column .profile-section li {
-    padding: 0.75rem 0;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.profile-left-column .profile-section li:last-child {
-    border-bottom: none;
-}
-
-/* Update media query */
-@media (max-width: 768px) {
-    .profile-left-column {
-        width: 100%;
-    }
+.profile-section.process {
+    flex: 1.18; /* Makes right column ~55% */
+    height: fit-content;
 }
 
 /* Philosophy section headers */
