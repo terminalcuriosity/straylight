@@ -88,12 +88,13 @@ section {
 }
 
 .hero-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    align-items: center;
-    max-width: 1200px;
+    max-width: 1440px;
     margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 120px; /* Add extra padding for mobile header */
 }
 
 .hero-content {
@@ -386,8 +387,9 @@ section {
 
 @media (max-width: 768px) {
     .hero-wrapper {
-        grid-template-columns: 1fr;
-        gap: 0.5rem;
+        flex-direction: column;
+        text-align: center;
+        padding-top: 100px; /* Slightly less padding on mobile */
     }
 
     .hero-image {
@@ -818,11 +820,30 @@ h3 {
     border: 1px solid var(--border-color);
 }
 
-.profile-section.background,
+.profile-section.background {
+    padding-bottom: 0;
+}
+
+.profile-section.background ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.profile-section.background li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.profile-section.background li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
 .profile-section.process {
-    width: 100%;  /* Make them full width */
-    display: block;  /* Stack them vertically */
-    margin-right: 0;
+    flex: 1.18; /* Makes right column ~55% */
+    height: fit-content;
 }
 
 .profile-section h2 {
@@ -845,17 +866,36 @@ h3 {
 }
 
 .profile-section.background {
-    padding: 2rem;
-    padding-bottom: 1rem;  /* Reduced bottom padding */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
-.profile-section.background ul {
-    margin-bottom: 0;  /* Remove bottom margin from list */
+.background-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
-.profile-section.background li:last-child {
+.background-content ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.background-content li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.background-content li:last-child {
     border-bottom: none;
-    padding-bottom: 0;  /* Remove padding from last item */
+    padding-bottom: 0;
+}
+
+.profile-section.process {
+    flex: 1.18; /* Makes right column ~55% */
+    height: fit-content;
 }
 
 @media (max-width: 768px) {
@@ -1847,4 +1887,9 @@ blockquote::after {
     margin-top: 2rem;
     font-size: 1.2rem;
     color: var(--text-color);
+}
+
+.no-bottom-space {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
 }
