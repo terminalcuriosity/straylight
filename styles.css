@@ -11,7 +11,7 @@
     --border-color: #E5E5E5;
 }
 
-* {
+* {  
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -1599,7 +1599,7 @@ blockquote::after {
 .left-column {
     display: flex;
     flex-direction: column;
-    gap: 2rem;  /* This matches the gap between sections */
+    gap: 2rem;  /* This matches the gap between sections. */
 }
 
 /* Case study specific styles */
