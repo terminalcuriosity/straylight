@@ -1465,6 +1465,7 @@ blockquote::after {
 
 .profile-quote p {
     margin: 0;
+    font-style: italic;
 }
 
 /* Adjust title spacing */
