@@ -1672,7 +1672,7 @@ blockquote::after {
 }
 
 .case-card {
-    flex: 0 0 calc(80% - 2rem);
+    flex: 0 0 calc(50% - 2rem);  /* Make cards take up half the width */
     max-width: 800px;
     min-height: 200px;
     background: white;
@@ -1694,9 +1694,18 @@ blockquote::after {
 
 .case-card h3 {
     color: var(--title-color);
-    font-size: 1.75rem;
+    font-size: 1.75rem;  /* Back to original size */
     line-height: 1.3;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.case-card .subtitle {
+    color: var(--text-color);
+    font-size: 1.2rem;  /* Back to original size */
+    line-height: 1.4;
     margin-bottom: 2rem;
+    font-weight: 400;
 }
 
 .case-link {
