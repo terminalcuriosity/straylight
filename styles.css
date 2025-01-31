@@ -1835,3 +1835,16 @@ blockquote::after {
 .profile-section.cases li:hover::after {
     transform: translateX(5px);
 }
+
+.case-section h2.subtitle {
+    font-size: 1.4rem;
+    color: var(--title-color);
+    margin: 0.5rem 0 2rem;
+    font-weight: 400;
+}
+
+.last-thought {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
