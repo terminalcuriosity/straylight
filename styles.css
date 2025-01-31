@@ -31,7 +31,8 @@ header {
     background: white;
     padding: 1rem 2rem;
     border-bottom: 1px solid var(--border-color);
-    z-index: 100; /* Ensure header stays on top */
+    z-index: 100;
+    height: 80px; /* Fixed height for header */
 }
 
 nav {
@@ -94,7 +95,7 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 120px; /* Add extra padding for mobile header */
+    padding-top: 120px; /* Increased padding to account for header + menu */
 }
 
 .hero-content {
@@ -389,7 +390,7 @@ section {
     .hero-wrapper {
         flex-direction: column;
         text-align: center;
-        padding-top: 100px; /* Slightly less padding on mobile */
+        padding-top: 120px; /* Increased padding to account for header + menu */
     }
 
     .hero-image {
@@ -415,13 +416,14 @@ section {
     
     .nav-links {
         position: fixed;
-        top: 60px;
+        top: 80px; /* Match header height */
         left: 0;
         right: 0;
         background: white;
         padding: 1rem;
         border-bottom: 1px solid var(--border-color);
-        display: none; /* We'll need JavaScript to toggle this */
+        display: none;
+        z-index: 99; /* Below header but above content */
     }
 
     .nav-links a {
@@ -957,14 +959,14 @@ h3 {
 
     .nav-links {
         position: fixed;
-        top: 60px;
+        top: 80px; /* Match header height */
         left: 0;
         right: 0;
         background: white;
         padding: 1rem;
         border-bottom: 1px solid var(--border-color);
         display: none;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        z-index: 99; /* Below header but above content */
     }
 
     .nav-links.active {
