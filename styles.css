@@ -289,9 +289,38 @@ section {
 }
 
 .target-list {
-    display: grid;
-    gap: 1.5rem;
-    margin-top: 2rem;
+    font-size: 1.4rem;
+    line-height: 1.6;
+    margin: 2rem 0;
+    padding-left: 1.5rem;
+    max-width: none;
+    list-style: none;
+}
+
+.target-list li {
+    margin-bottom: 1.5rem;
+    padding-left: 0;
+    border: none;
+}
+
+.target-list li:last-child {
+    margin-bottom: 2rem;
+}
+
+.industries-line {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    .target-list {
+        font-size: 1.2rem;
+    }
+    
+    .industries-line {
+        font-size: 1.2rem;
+    }
 }
 
 .target-item {
@@ -615,7 +644,7 @@ h3 {
     font-size: 1.4rem;
     line-height: 1.6;
     margin-bottom: 2rem;
-    max-width: 900px; /* To maintain reasonable line length for readability */
+    max-width: none;  /* Remove max-width to match solution section */
 }
 
 .problem-conclusion {
@@ -624,7 +653,7 @@ h3 {
     margin-top: 2rem;
     padding-top: 2rem;
     border-top: 1px solid var(--border-color);
-    max-width: 900px; /* To maintain reasonable line length for readability */
+    max-width: none;  /* Remove max-width to match solution section */
 }
 
 @media (max-width: 768px) {
@@ -642,8 +671,110 @@ h3 {
 
 .solution-content h2 {
     font-size: 2.5rem;
-    line-height: 1.2;
-    margin-bottom: 2rem;
+    color: var(--title-color);
+    margin-bottom: 1rem;
+}
+
+.solution-intro {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+    max-width: none;  /* Remove max-width constraint to match grid width */
+}
+
+.solution-content h3 {
+    font-size: 1.75rem;
+    color: var(--title-color);
+    margin: 2rem 0 1.5rem;
+}
+
+.delivery-grid, .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 0;
+}
+
+/* Remove any margin-right: auto that might cause centering */
+.delivery-item, .benefit-item {
+    text-align: left;
+    margin: 0;
+}
+
+.delivery-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.delivery-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s ease;
+}
+
+.delivery-item:hover {
+    transform: translateY(-4px);
+    background: rgba(57, 43, 84, 0.03);
+    border-color: var(--title-color);
+}
+
+.delivery-item h4 {
+    font-size: 1.4rem;
+    color: var(--title-color);
+    margin-bottom: 1rem;
+}
+
+.delivery-item p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: var(--text-color);
+}
+
+.benefit-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s ease;
+}
+
+.benefit-item:hover {
+    transform: translateY(-4px);
+    background: rgba(57, 43, 84, 0.03);
+    border-color: var(--title-color);
+}
+
+.benefit-item h4 {
+    font-size: 1.3rem;
+    color: var(--title-color);
+    margin-bottom: 0.75rem;
+}
+
+.benefit-item p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: var(--text-color);
+}
+
+@media (max-width: 768px) {
+    .solution-content h2 {
+        font-size: 2rem;
+    }
+    
+    .solution-intro {
+        font-size: 1.2rem;
+    }
+    
+    .delivery-item, .benefit-item {
+        text-align: left;  /* Keep left alignment on mobile */
+    }
+    
+    .delivery-icon {
+        text-align: left;  /* Keep icons left-aligned on mobile */
+    }
 }
 
 .solution-box {
@@ -699,7 +830,7 @@ h3 {
     line-height: 1.6;
     margin: 2rem 0;
     padding-left: 1.5rem;
-    max-width: 900px;
+    max-width: none;  /* Remove max-width to match solution section */
 }
 
 .problem-list li {
@@ -1902,4 +2033,213 @@ blockquote::after {
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 100px; /* This ensures the scroll stops at the title */
+}
+
+.solution-box h2 {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.solution-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+    padding: 2rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.solution-item {
+    text-align: left;
+}
+
+.solution-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.solution-item h4 {
+    color: white;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.solution-item p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+.solution-benefits {
+    margin-top: 2rem;
+}
+
+.solution-benefits h3 {
+    color: white;
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.solution-benefits ul {
+    list-style: none;
+    padding: 0;
+}
+
+.solution-benefits li {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    padding-left: 0;
+}
+
+.solution-benefits li strong {
+    color: white;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .solution-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .solution-box h2 {
+        font-size: 2rem;
+    }
+    
+    .solution-item {
+        text-align: center;
+    }
+}
+
+.target-content {
+    max-width: none;
+    margin: 0;
+    padding: 0 2rem;
+}
+
+.target-intro {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+    max-width: none;
+}
+
+.target-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin: 0;
+}
+
+.target-requirements {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s ease;
+}
+
+.target-list li {
+    padding: 1rem 0;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    border-bottom: 1px solid var(--border-color);
+    list-style: none;
+}
+
+.industries-line {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    .industries-line {
+        font-size: 1.1rem;
+    }
+}
+
+.process-content {
+    max-width: none;
+    margin: 0;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.phase {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s ease;
+}
+
+.phase:hover {
+    transform: translateY(-4px);
+    background: rgba(57, 43, 84, 0.03);
+    border-color: var(--title-color);
+}
+
+.phase h3 {
+    font-size: 1.75rem;
+    color: var(--title-color);
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
+}
+
+.process-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1.4rem;
+    line-height: 1.6;
+}
+
+.process-list li {
+    margin-bottom: 1.5rem;
+    padding-left: 0;
+}
+
+.process-list li:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .process-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .process-list {
+        font-size: 1.2rem;
+    }
+    
+    .phase h3 {
+        font-size: 1.5rem;
+    }
+}
+
+.not-fit-content {
+    max-width: none;
+    margin: 0;
+    padding: 0 2rem;
+}
+
+.not-fit-intro {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.industries-section {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
 }
