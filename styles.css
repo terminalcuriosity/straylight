@@ -2243,3 +2243,31 @@ html {
     padding-top: 2rem;
     border-top: 1px solid var(--border-color);
 }
+
+.industries-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.industry-tag {
+    background: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    font-size: 1.1rem;
+    transition: all 0.2s ease;
+}
+
+.industry-tag:hover {
+    background: rgba(57, 43, 84, 0.03);
+    border-color: var(--title-color);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .industry-tag {
+        font-size: 1rem;
+    }
+}
