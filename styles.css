@@ -2249,15 +2249,18 @@ html {
     flex-wrap: wrap;
     gap: 1rem;
     margin-top: 1rem;
+    justify-content: flex-start;  /* Align items to the start */
 }
 
 .industry-tag {
-    background: white;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
+    display: inline-block;  /* Ensure block behavior */
+    background-color: #ffffff;  /* Explicit white background */
+    padding: 0.75rem 1.5rem;  /* Slightly larger padding to match screenshot */
+    border-radius: 8px;  /* Increased border radius to match screenshot */
     border: 1px solid var(--border-color);
-    font-size: 1.1rem;
+    font-size: 1.2rem;  /* Slightly larger font */
     transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
 }
 
 .industry-tag:hover {
@@ -2267,7 +2270,12 @@ html {
 }
 
 @media (max-width: 768px) {
+    .industries-grid {
+        gap: 0.75rem;
+    }
+    
     .industry-tag {
         font-size: 1rem;
+        padding: 0.5rem 1rem;
     }
 }
