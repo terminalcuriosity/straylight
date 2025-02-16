@@ -1,13 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maria Pirson - Straylight Consulting</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="./index.html">
+                    <img src="./straylight-logo.jpg" alt="Straylight Consulting">
+                </a>
+            </div>
+            <button class="mobile-menu-button" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-links">
+                <a href="./index.html#home">Home</a>
+                <a href="./index.html#process">How It Works</a>
+                <a href="./index.html#team">Team</a>
+                <a href="./index.html#case-gallery">Our Cases</a>
+                <a href="./index.html#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="team-profile">
+            <div class="profile-header">
+                <div class="profile-intro">
+                    <img src="maria.jpeg" alt="Maria Pirson">
+                    <div class="profile-title">
                         <h1>Maria Pirson</h1>
-                        <p class="role">Market Research & Investment Relations Lead</p>
+                        <p class="role">Market Research & Investor Relations</p>
                         <blockquote class="profile-quote">
-                           <a href="#philosophy">
-                               <p>"The best market research is the one that challenges your assumptions and makes you uncomfortable."</p>
-                           </a>
+                            <a href="#philosophy">
+                                <p>""The best market research is the one that challenges your assumptions and makes you uncomfortable."</p>
+                            </a>
                         </blockquote>
                     </div>
                 </div>
             </div>
-            <!-- ... -->
-           <div class="profile-section philosophy">
-               <h2 id="philosophy">Work Philosophy</h2> 
+
+            <div class="profile-content">
+                <div class="profile-top-sections">
+                    <div class="profile-left-column">
+                        <div class="profile-section">
+                            <h2>Professional Background</h2>
+                            <ul>
+                                <li>Market Research Lead at Daedalean AI</li>
+                                <li>Investment Analyst for both Startups & VCs</li>
+                                <li>Strategy Planning Facilitator</li>
+                            </ul>
+                        </div>
+                        <div class="profile-section cases hidden" style="display: none !important;">
+                            <h2>Cases</h2>
+                            <ul>
+                                <li><a href="cases/financial-modeling.html">How Ruthless Financial Modeling Saved a Startup from Its Own Optimism</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="profile-section process hidden">
+                        <h2>Key Value Propositions</h2>
+                        <div class="process-step">
+                            <h3>1. Assumption Validation </h3>
+                            <ul>
+                                <li>Rigorous analysis of core business hypotheses using market data</li>
+                                <li>Conducting customer interviews</li>
+                                <li>Competitive analysis </li>
+                                <li>Validating TAM calculations </li>
+                                <li><b><i>Deliverable:</i></b> "Red Flag Report" identifying gaps between assumptions and market truth</li>
+                            </ul>
+                        </div>
+                        <div class="process-step">
+                            <h3>2. Due Diligence Defense Preparation</h3>
+                            <ul>
+                                <li>Audit-proofing market claims, financial models, and competitive positioning ahead of investor scrutiny.
+                        </li>
+                                <li> Includes mock Q&A drills and data room structuring.</li>
+                            </ul>
+                        </div>
+                        <div class="process-step">
+                            <h3>3. Pitch Development</h3>
+                            <ul>
+                                <li>End-to-end pitch deck creation </li>
+                                <li>"Devil's Advocate" simulations to pressure-test claims</li>
+                                <li>Strategic planning sessions to align visions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-section philosophy">
+                    <h2 id="philosophy">Work Philosophy</h2>
+                    <div class="philosophy-quotes">
+                        <div class="quote">
+                            <p>"Startups are prone to falling in love with their own ideas. This bias is natural—to become emotionally attached to what you're building. Even experienced founders and brilliant teams often fall into this trap: mixing what they <i>want</i> to create with what the market actually needs, wasting time and money in the process.
+                            <br><br>
+                                <p>"As an external consultant, my role is to provide counterbalance, pulling them back toward market reality."</p></p>
+                        </div>
+                        <div class="quote-divider"></div>
+                        
+                        <div class="quote">
+                            <p>"I sometimes joke that nobody likes working with a market researcher. While that's not necessarily true, from time to time I have to be the bearer of bad news. When data reveals that efforts have become sunk costs—that the target segment is chosen wrong, the users do not really have this pain, the cost of acquisition is twice as high as their lifetime value, the TAM is too small and you don't have anywhere to scale, etc.—founders aren't always ready to accept it. This reaction is grief. I get it. But the market either is there or it isn't exist. You can't negotiate reality, and in a startup, limited resources make costly mistakes more dangerous."</p>
+                        </div>
+                        <div class="quote-divider"></div>
+                        
+                        <div class="quote">
+                            <p>
+                                "Creating a compelling pitch deck is like the fable of stone soup. It seems simple: just compile slides with market data. But when you start talking to founders and it turns out, even their vision of the business is different, without them realizing it. We map the business logic, and gaps appear. We test assumptions, and they crumble. I sit with founders to harmonize their vision, revisit flawed assumptions, and sometimes it needs to rebuild entire aspects of the business—all to create a viable, data-driven pitch deck. It's not about making a PDF. The PDF is just the stone in that soup."
+                                </p><br>
+                            
+                            </div>
+                            <div class="quote-divider"></div>
+                            <div class="quote">
+                        
+                            <p>"Founders sometimes say, "We need to agree with investors on market size."  But this is a misconception - the market either exists or it doesn't. 'I'm currently raising investments, I've already prepared the investment presentation, I just need to draw this damn slide for the investor where I'll show the Total Addressable Market.'' The estimates should be reasonable primarily for you, so that you understand, whether you can build a business here."</p>
+                        </div>     <div class="quote-divider"></div>
+                       
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Straylight Consulting. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html> 
